@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無料姓名判断｜名前の画数でわかる天格・人格・地格・外格・総格【登録不要】</title>
+<meta name="description" content="姓名を入力するだけで五格（天格・人格・地格・外格・総格）を無料鑑定。画数の意味・陰陽バランスまで、登録不要・ブラウザ内完結ですぐわかります。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="無料姓名判断｜名前の画数でわかる五格鑑定">
+<meta property="og:description" content="姓名を入力するだけで五格（天格・人格・地格・外格・総格）を無料鑑定。登録不要・ブラウザ内完結。">
+<meta property="og:site_name" content="姓名鑑定処">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="css/style.css?v=20260715b">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "姓名鑑定処",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+  "description": "姓名の画数から五格（天格・人格・地格・外格・総格）を無料で鑑定するWebアプリ。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "本当に無料ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、すべての鑑定が完全無料です。会員登録・メールアドレスの入力も一切不要です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "入力した名前は保存されますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。計算はすべてお使いのブラウザの中だけで行われ、外部に送信・保存されることは一切ありません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ひらがな・カタカナの名前でも占えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "姓名判断は漢字の画数を基準にするため、現在は漢字表記のみに対応しています。" }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand-seal">鑑定</div>
+      <h1 class="site-title">姓名鑑定処<small>SEIMEI KANTEI-DOKORO</small></h1>
+      <p class="site-sub">人生これから研究所が贈る、名前に宿る運勢の物語。漢字二文字・三文字から、あなたの五格を静かに読み解きます。</p>
+    </header>
+
+    <main>
+      <section id="intro">
+        <p class="intro-lead">姓と名を漢字でご入力ください。天格・人格・地格・外格・総格の五格を、その場で鑑定します。</p>
+
+        <div class="form-card">
+          <form id="name-form" autocomplete="off">
+            <div id="form-error" class="form-error" hidden></div>
+            <div class="field-row">
+              <div class="field">
+                <label for="input-sei">姓（苗字）</label>
+                <input type="text" id="input-sei" name="sei" placeholder="例：山田" maxlength="6" required>
+              </div>
+              <div class="field">
+                <label for="input-mei">名（下の名前）</label>
+                <input type="text" id="input-mei" name="mei" placeholder="例：太郎" maxlength="6" required>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">五格を鑑定する</button>
+            <p class="field-hint">漢字のみ対応・入力内容は保存されません</p>
+          </form>
+        </div>
+
+        <div class="trust-row">
+          <span class="trust-badge">完全無料</span>
+          <span class="trust-badge">登録不要</span>
+          <span class="trust-badge">ブラウザ内完結</span>
+          <span class="trust-badge">五格＋陰陽バランス鑑定</span>
+        </div>
+      </section>
+
+      <section id="result" hidden></section>
+
+      <section class="section-block">
+        <h2 class="section-title">五格について</h2>
+        <div class="guide-grid">
+          <div class="guide-item">
+            <h4>天格（てんかく）</h4>
+            <p>姓の画数から算出。先祖から受け継ぐ家系の気質・土台を表します。</p>
+          </div>
+          <div class="guide-item">
+            <h4>人格（じんかく）</h4>
+            <p>姓の最後の文字と名の最初の文字から算出。生まれ持った性格・対人関係の中心です。</p>
+          </div>
+          <div class="guide-item">
+            <h4>地格（ちかく）</h4>
+            <p>名の画数から算出。幼少期から青年期にかけての運勢・基礎的な体力を表します。</p>
+          </div>
+          <div class="guide-item">
+            <h4>外格（がいかく）</h4>
+            <p>総格から人格を引いた数。社会に対してどう振る舞うか、対外運を表します。</p>
+          </div>
+          <div class="guide-item">
+            <h4>総格（そうかく）</h4>
+            <p>姓名すべての画数の合計。人生全体を貫く運勢、特に晩年運を表す総合的な指標です。</p>
+          </div>
+          <div class="guide-item">
+            <h4>陰陽（いんよう）</h4>
+            <p>各文字の画数の奇数・偶数から求めるバランス。交互に並ぶほど調和が取れているとされます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">よくある質問</h2>
+        <div class="faq-item">
+          <p class="faq-q">本当に無料ですか？</p>
+          <p class="faq-a">はい、すべての鑑定が完全無料です。会員登録・メールアドレスの入力も一切不要です。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">入力した名前は保存されますか？</p>
+          <p class="faq-a">いいえ。計算はすべてお使いのブラウザの中だけで行われ、外部への送信・保存は一切ありません。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">ひらがな・カタカナの名前でも占えますか？</p>
+          <p class="faq-a">姓名判断は漢字の画数を基準にするため、現在は漢字表記のみに対応しています。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">画数はどのように数えていますか？</p>
+          <p class="faq-a">日本の漢字辞典に準拠した画数データ（約13,000字収録）をもとに、天格・人格・地格・外格・総格を算出しています。旧字体・異体字（例：瀬と瀨）はそれぞれの字体の画数で鑑定します。</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">「々」の付く名字（佐々木など）は占えますか？</p>
+          <p class="faq-a">はい。踊り字「々」は直前の漢字の繰り返しとして、同じ画数で計算します。</p>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">人生これから研究所の仲間たち</h2>
+        <div class="related-row">
+          <a class="related-link" href="https://beautiful-belekoy-310d82.netlify.app/" target="_blank" rel="noopener">
+            <strong>奇門遁甲アプリ</strong>方位から吉凶を読む方位術
+          </a>
+          <a class="related-link" href="https://hoshiyomi-no-heya.netlify.app/" target="_blank" rel="noopener">
+            <strong>星読みの部屋</strong>世界13占術が無料で楽しめる占いサイト
+          </a>
+        </div>
+      </section>
+
+      <p class="disclaimer">
+        ※本サイトの鑑定はエンターテインメントを目的としたものです。<br>
+        画数は一般的な辞書表記の総画数を用いており、流派により数え方が異なる場合があります。
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <p>姓名鑑定処 ｜ 人生これから研究所</p>
+      <p class="credit">漢字画数データ: <a href="https://www.edrdg.org/wiki/index.php/KANJIDIC_Project" target="_blank" rel="noopener">KANJIDIC2</a> © EDRDG（CC BY-SA 4.0）</p>
+    </footer>
+  </div>
+
+  <script src="js/kanji-strokes.js?v=20260715b"></script>
+  <script src="js/fortune-meanings.js?v=20260715b"></script>
+  <script src="js/app.js?v=20260715b"></script>
+</body>
+</html>

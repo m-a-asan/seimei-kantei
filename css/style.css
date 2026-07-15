@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+:root {
+  --paper: #f4ecdd;
+  --paper-deep: #ebe0cb;
+  --ink: #24211c;
+  --ink-soft: #4a453c;
+  --vermillion: #b8402f;
+  --vermillion-deep: #8f2e21;
+  --gold: #ad8a3f;
+  --line: rgba(36, 33, 28, 0.16);
+  --great: #8f2e21;
+  --good: #7a6a2e;
+  --normal: #4a5a4d;
+  --caution: #6d4b1f;
+  --hard: #4a453c;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.85;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 15% 8%, rgba(184, 64, 47, 0.05), transparent 40%),
+    radial-gradient(circle at 85% 92%, rgba(173, 138, 63, 0.08), transparent 45%);
+}
+
+img, svg { max-width: 100%; }
+
+a { color: var(--vermillion-deep); }
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  text-align: center;
+  padding: 48px 20px 28px;
+  position: relative;
+}
+
+.site-header::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: var(--gold);
+  margin: 22px auto 0;
+  opacity: 0.7;
+}
+
+.brand-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 2.5px solid var(--vermillion);
+  border-radius: 6px;
+  color: var(--vermillion);
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transform: rotate(-3deg);
+  margin-bottom: 14px;
+  writing-mode: vertical-rl;
+}
+
+.site-title {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+}
+
+.site-title small {
+  display: block;
+  font-size: 0.4em;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: 0.2em;
+  margin-top: 8px;
+}
+
+.site-sub {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 34em;
+  margin: 0 auto;
+}
+
+/* ---------- Intro / Form ---------- */
+.intro-lead {
+  text-align: center;
+  margin: 8px 0 36px;
+  color: var(--ink-soft);
+}
+
+.form-card {
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 34px 26px;
+  box-shadow: 0 18px 40px rgba(36, 33, 28, 0.08);
+  position: relative;
+}
+
+.form-card::before {
+  content: "鑑";
+  position: absolute;
+  top: -22px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  background: var(--vermillion);
+  color: #fff8ec;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(143, 46, 33, 0.35);
+  transform: rotate(4deg);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .field-row { grid-template-columns: 1fr; }
+}
+
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.field input {
+  width: 100%;
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.3rem;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-bottom: 2.5px solid var(--ink);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.field input:focus {
+  outline: none;
+  border-bottom-color: var(--vermillion);
+  background: #fffdf8;
+}
+
+.field-hint {
+  font-size: 0.78rem;
+  color: #8c8577;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.form-error {
+  background: #f7e2dd;
+  border: 1px solid rgba(184, 64, 47, 0.35);
+  color: var(--vermillion-deep);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  margin-bottom: 18px;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 10px;
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+
+.btn-primary:hover { background: var(--vermillion-deep); }
+.btn-primary:active { transform: scale(0.98); }
+
+/* ---------- Trust badges ---------- */
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.trust-badge {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: #fffdf8;
+}
+
+/* ---------- Result ---------- */
+#result { margin-top: 8px; }
+
+.result-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.result-name-label {
+  color: var(--vermillion-deep);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  margin: 0 0 8px;
+}
+
+.result-name {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(1.6rem, 7vw, 2.3rem);
+  font-weight: 800;
+  margin: 0;
+}
+
+.name-space { display: inline-block; width: 0.4em; }
+
+.stroke-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.stroke-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px 8px;
+  min-width: 58px;
+}
+
+.stroke-char {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stroke-num {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--vermillion-deep);
+}
+
+.stroke-num small { font-size: 0.7em; font-weight: 500; color: var(--ink-soft); }
+
+.stroke-divider {
+  width: 1px;
+  background: var(--line);
+  margin: 4px 4px;
+}
+
+.grid-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.grid-card {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 18px;
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 26px rgba(36, 33, 28, 0.06);
+  animation: reveal 0.5s ease both;
+}
+
+@media (max-width: 480px) {
+  .grid-card { grid-template-columns: 72px 1fr; gap: 12px; padding: 14px; }
+}
+
+.grid-card:nth-child(1) { animation-delay: 0.05s; }
+.grid-card:nth-child(2) { animation-delay: 0.15s; }
+.grid-card:nth-child(3) { animation-delay: 0.25s; }
+.grid-card:nth-child(4) { animation-delay: 0.35s; }
+.grid-card:nth-child(5) { animation-delay: 0.45s; }
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.grid-card-seal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid currentColor;
+  border-radius: 10px;
+  padding: 10px 4px;
+  text-align: center;
+}
+
+.grid-card-label {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+}
+
+.grid-card-value {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.grid-card-sub {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.grid-card-rank {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.grid-card-text {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.rank-great   { color: var(--great); }
+.rank-good    { color: var(--good); }
+.rank-normal  { color: var(--normal); }
+.rank-caution { color: var(--caution); }
+.rank-hard    { color: var(--hard); }
+
+.inyou-card, .summary-card {
+  background: var(--paper-deep);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+}
+
+.inyou-card h3, .summary-card h3 {
+  font-family: "Shippori Mincho", serif;
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.inyou-card p, .summary-card p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+.summary-card strong { color: var(--vermillion-deep); }
+
+.share-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary, .btn-share {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+}
+
+.btn-share {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1.5px solid var(--ink);
+}
+
+/* ---------- Guide / FAQ ---------- */
+.section-block {
+  margin-top: 56px;
+}
+
+.section-title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.section-title::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--vermillion);
+  margin: 0 auto 12px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.guide-item {
+  background: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.guide-item h4 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-family: "Shippori Mincho", serif;
+}
+
+.guide-item p { margin: 0; font-size: 0.85rem; color: var(--ink-soft); }
+
+.faq-item { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-weight: 700; margin: 0 0 6px; }
+.faq-q::before { content: "Q. "; color: var(--vermillion-deep); }
+.faq-a { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+.faq-a::before { content: "A. "; color: var(--gold); font-weight: 700; }
+
+.related-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.related-link {
+  display: block;
+  border: 1px solid var(--line);
+  background: #fffdf8;
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.88rem;
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+}
+
+.related-link strong {
+  display: block;
+  font-family: "Shippori Mincho", serif;
+  font-size: 1rem;
+  color: var(--vermillion-deep);
+  margin-bottom: 4px;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #8c8577;
+  margin-top: 40px;
+  line-height: 1.7;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 30px 20px 50px;
+  color: #8c8577;
+  font-size: 0.8rem;
+}
+
+.site-footer .credit { font-size: 0.72rem; margin-top: 6px; }
+.site-footer .credit a { color: inherit; }
