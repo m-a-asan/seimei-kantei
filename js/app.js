@@ -159,6 +159,7 @@
       <div class="share-row">
         <button type="button" id="btn-retry" class="btn-secondary">別の名前で調べる</button>
         <a class="btn-share" id="btn-share-x" target="_blank" rel="noopener">Xでシェア</a>
+        <a class="btn-share btn-share-line" id="btn-share-line" target="_blank" rel="noopener">LINEで送る</a>
       </div>
     `;
 
@@ -178,6 +179,7 @@
     );
     const shareUrl = encodeURIComponent(window.location.href);
     document.getElementById("btn-share-x").href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+    document.getElementById("btn-share-line").href = `https://social-plugins.line.me/lineit/share?url=${shareUrl}`;
   }
 
   form.addEventListener("submit", function (e) {

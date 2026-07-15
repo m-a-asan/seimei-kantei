@@ -427,6 +427,12 @@ a { color: var(--vermillion-deep); }
   border: 1.5px solid var(--ink);
 }
 
+.btn-share-line {
+  background: #06C755;
+  color: #fff;
+  border: 1.5px solid #06C755;
+}
+
 /* ---------- Guide / FAQ ---------- */
 .section-block {
   margin-top: 56px;
