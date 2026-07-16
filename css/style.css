@@ -373,6 +373,16 @@ a { color: var(--vermillion-deep); }
   color: var(--ink-soft);
 }
 
+.grid-card-more {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--vermillion);
+  text-decoration: none;
+  font-weight: 700;
+}
+.grid-card-more:hover { text-decoration: underline; }
+
 .rank-great   { color: var(--great); }
 .rank-good    { color: var(--good); }
 .rank-normal  { color: var(--normal); }

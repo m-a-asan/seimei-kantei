@@ -91,6 +91,8 @@
 
   function renderGrid(id, label, value, sublabel) {
     const meaning = getNumberMeaning(value);
+    let pageIdx = value % 81;
+    if (pageIdx === 0) pageIdx = 81;
     return `
       <div class="grid-card ${rankClass(meaning.rank)}" data-grid="${id}">
         <div class="grid-card-seal">
@@ -101,6 +103,7 @@
           <div class="grid-card-sub">${sublabel}</div>
           <div class="grid-card-rank">${meaning.rank}・${meaning.title}</div>
           <p class="grid-card-text">${meaning.text}</p>
+          <a class="grid-card-more" href="kazu/${pageIdx}/">→ ${pageIdx}画の意味を詳しく見る</a>
         </div>
       </div>`;
   }
