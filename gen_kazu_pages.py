@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
-SITE = "https://m-a-asan.github.io/seimei-kantei"
+SITE = "https://seimei.korekaralab.com"
 TODAY = "2026-07-16"
 BEACON = "<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{\"token\": \"9961ede6882241fb98504c8c4b8fc963\"}'></script><!-- End Cloudflare Web Analytics -->"
 
