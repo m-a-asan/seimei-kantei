@@ -130,6 +130,14 @@ def page_for(n, m, meanings):
       </div>
 
       <p class="disclaimer">※本ページの解説はエンターテインメントを目的としたものです。数意は流派により解釈が異なる場合があります。82画以上は81を引いた数（81周期）で読みます。</p>
+      <!-- sister-sites -->
+      <section class="section-block">
+        <h2 class="section-title">ほかの占いも無料で</h2>
+        <div class="related-row">
+          <a class="related-link" href="https://hoshiyomi.korekaralab.com/"><strong>星読みの部屋</strong>タロット・四柱推命・マヤ暦など世界の占い13種類</a>
+          <a class="related-link" href="https://houi.korekaralab.com/"><strong>方位みくじ</strong>奇門遁甲で今日の吉方位を占う</a>
+        </div>
+      </section>
     </main>
     <footer class="site-footer">
       <p><a href="../../" style="color:inherit">姓名鑑定処</a> ｜ 人生これから研究所</p>
@@ -190,6 +198,14 @@ def hub_page(meanings):
       </div>
 
       <p class="disclaimer">※本ページの解説はエンターテインメントを目的としたものです。数意は流派により解釈が異なる場合があります。82画以上は81を引いた数（81周期）で読みます。</p>
+      <!-- sister-sites -->
+      <section class="section-block">
+        <h2 class="section-title">ほかの占いも無料で</h2>
+        <div class="related-row">
+          <a class="related-link" href="https://hoshiyomi.korekaralab.com/"><strong>星読みの部屋</strong>タロット・四柱推命・マヤ暦など世界の占い13種類</a>
+          <a class="related-link" href="https://houi.korekaralab.com/"><strong>方位みくじ</strong>奇門遁甲で今日の吉方位を占う</a>
+        </div>
+      </section>
     </main>
     <footer class="site-footer">
       <p><a href="../" style="color:inherit">姓名鑑定処</a> ｜ 人生これから研究所</p>
