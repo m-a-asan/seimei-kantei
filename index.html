@@ -73,7 +73,10 @@
         var started = false;   // 自動再生は1回だけ
         var LAST = 23;         // 終わったらロゴの場面（23秒）で止める。最後の0.8秒は暗転のため
         var label = function (s, a) { b.textContent = s; b.setAttribute('aria-label', a); };
-        v.addEventListener('playing', function () { started = true; });
+        v.addEventListener('playing', function () {
+        // 1回流れたら autoplay を外す（外さないと、画面外から戻ったときにChromeが再生を再開する）
+        started = true; v.autoplay = false; v.removeAttribute('autoplay');
+      });
         v.addEventListener('ended', function () {
           v.currentTime = LAST; v.muted = true;
           label('▶', 'もう一度、音ありで再生');
