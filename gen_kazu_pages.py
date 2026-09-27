@@ -24,27 +24,28 @@ KAKU_HINTS = [
 
 HEAD_COMMON = """<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d0a07">
 <link rel="stylesheet" href="{css}">
 <style>
 .kazu-hero{{text-align:center;padding:18px 0 6px}}
-.kazu-hero .num-seal{{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:110px;height:110px;border:3px solid var(--vermillion);border-radius:14px;color:var(--vermillion);font-weight:700;background:#fff}}
+.kazu-hero .num-seal{{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:110px;height:110px;border:2px solid var(--gold);border-radius:14px;color:var(--gold-hi);font-weight:700;background:var(--panel);box-shadow:0 0 30px rgba(201,164,90,.18)}}
 .kazu-hero .num-seal b{{font-size:44px;line-height:1}}
 .kazu-hero .num-seal span{{font-size:12px;margin-top:4px}}
-.rank-chip{{display:inline-block;padding:3px 14px;border-radius:100px;color:#fff;font-size:13px;font-weight:700;margin:12px 0 4px}}
+.rank-chip{{display:inline-block;padding:3px 14px;border-radius:100px;color:#1a1209;font-size:13px;font-weight:700;margin:12px 0 4px}}
 .rank-chip.rank-great{{background:var(--great)}}.rank-chip.rank-good{{background:var(--good)}}.rank-chip.rank-normal{{background:var(--normal)}}.rank-chip.rank-caution{{background:var(--caution)}}.rank-chip.rank-hard{{background:var(--hard)}}
 .kazu-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}}
-.kazu-cell{{border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:inherit;background:#fff;transition:.15s}}
-.kazu-cell:hover{{border-color:var(--vermillion);transform:translateY(-2px)}}
+.kazu-cell{{border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-decoration:none;color:inherit;background:var(--panel);transition:.15s}}
+.kazu-cell:hover{{border-color:var(--gold);transform:translateY(-2px)}}
 .kazu-cell .kn{{font-weight:700;font-size:17px}}
 .kazu-cell .kr{{font-size:11.5px;font-weight:700}}
 .kazu-cell .kt{{font-size:12px;color:var(--ink-soft)}}
 .kr.rank-great{{color:var(--great)}}.kr.rank-good{{color:var(--good)}}.kr.rank-normal{{color:var(--normal)}}.kr.rank-caution{{color:var(--caution)}}.kr.rank-hard{{color:var(--hard)}}
 .kazu-nav{{display:flex;justify-content:space-between;gap:10px;margin:22px 0}}
 .kazu-nav a{{flex:1;text-align:center;border:1px solid var(--line);border-radius:10px;padding:10px;text-decoration:none;color:inherit;font-size:14px}}
-.kazu-nav a:hover{{border-color:var(--vermillion)}}
+.kazu-nav a:hover{{border-color:var(--gold)}}
 .same-rank{{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}}
 .same-rank a{{border:1px solid var(--line);border-radius:100px;padding:4px 12px;font-size:13px;text-decoration:none;color:inherit}}
-.same-rank a:hover{{border-color:var(--vermillion);color:var(--vermillion)}}
+.same-rank a:hover{{border-color:var(--gold);color:var(--gold-hi)}}
 .kazu-cta{{text-align:center;margin:30px 0 6px}}
 .kazu-cta .btn-primary{{display:inline-block;text-decoration:none;padding:14px 30px}}
 .crumb{{font-size:12px;color:var(--ink-soft);margin-bottom:10px}}.crumb a{{color:inherit}}
@@ -80,7 +81,7 @@ def page_for(n, m, meanings):
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
-{HEAD_COMMON.format(css="../../css/style.css?v=20260716")}
+{HEAD_COMMON.format(css="../../css/style.css?v=20260927")}
 <title>姓名判断で{n}画の意味は「{title}」（{rank}）｜画数の数意解説 - 姓名鑑定処</title>
 <meta name="description" content="姓名判断における{n}画は「{title}」（{rank}）。{text[:60]}——天格・人格・地格・外格・総格それぞれに{n}画が出た場合の読み方を解説します。">
 <link rel="canonical" href="{SITE}/kazu/{n}/">
@@ -91,7 +92,7 @@ def page_for(n, m, meanings):
 </head>
 <body>
 <!-- ad-disclosure -->
-<div style="text-align:center;font-size:12px;line-height:1.6;padding:4px 12px;background:rgba(36,33,28,0.05);color:#4a453c;">当サイトはアフィリエイト広告（PR）を利用しています</div>
+<div class="ad-disclosure">当サイトはアフィリエイト広告（PR）を利用しています</div>
   <div class="wrap">
     <header class="site-header">
       <div class="brand-seal">鑑定</div>
@@ -133,10 +134,10 @@ def page_for(n, m, meanings):
 
       <p class="disclaimer">※本ページの解説はエンターテインメントを目的としたものです。数意は流派により解釈が異なる場合があります。82画以上は81を引いた数（81周期）で読みます。</p>
       <!-- a8-coconala -->
-      <section class="section-block">
-        <span style="display:inline-block;font-size:11px;letter-spacing:.08em;padding:2px 8px;border:1px solid rgba(36,33,28,0.3);border-radius:4px;color:#4a453c;">PR</span>
-        <p style="margin:10px 0 14px;font-size:0.92rem;line-height:1.9;color:#4a453c;">画数の意味をふまえて、今の悩みを占い師にじっくり聞いてもらいたいときは、電話で相談できるサービスもあります。</p>
-        <div style="text-align:center;line-height:0;"><a href="https://px.a8.net/svt/ejp?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" rel="nofollow">
+      <section class="section-block pr-box">
+        <span class="pr-tag">PR</span>
+        <p class="pr-lead">画数の意味をふまえて、今の悩みを占い師にじっくり聞いてもらいたいときは、電話で相談できるサービスもあります。</p>
+        <div class="pr-banner"><a href="https://px.a8.net/svt/ejp?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" rel="nofollow">
         <img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=260925694841&wid=008&eno=01&mid=s00000012624002005000&mc=1"></a>
         <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" alt=""></div>
       </section>
@@ -177,7 +178,7 @@ def hub_page(meanings):
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
-{HEAD_COMMON.format(css="../css/style.css?v=20260716")}
+{HEAD_COMMON.format(css="../css/style.css?v=20260927")}
 <title>画数の意味一覧【1〜81画】姓名判断の数意早見表（無料）｜姓名鑑定処</title>
 <meta name="description" content="姓名判断で使う1〜81画すべての数意（画数の意味・吉凶）を一覧で解説。大吉・吉・半吉・要注意・凶の分類つき早見表。気になる画数をタップすると、五格ごとの詳しい読み方がわかります。">
 <link rel="canonical" href="{SITE}/kazu/">
@@ -188,7 +189,7 @@ def hub_page(meanings):
 </head>
 <body>
 <!-- ad-disclosure -->
-<div style="text-align:center;font-size:12px;line-height:1.6;padding:4px 12px;background:rgba(36,33,28,0.05);color:#4a453c;">当サイトはアフィリエイト広告（PR）を利用しています</div>
+<div class="ad-disclosure">当サイトはアフィリエイト広告（PR）を利用しています</div>
   <div class="wrap">
     <header class="site-header">
       <div class="brand-seal">鑑定</div>
@@ -212,10 +213,10 @@ def hub_page(meanings):
 
       <p class="disclaimer">※本ページの解説はエンターテインメントを目的としたものです。数意は流派により解釈が異なる場合があります。82画以上は81を引いた数（81周期）で読みます。</p>
       <!-- a8-coconala -->
-      <section class="section-block">
-        <span style="display:inline-block;font-size:11px;letter-spacing:.08em;padding:2px 8px;border:1px solid rgba(36,33,28,0.3);border-radius:4px;color:#4a453c;">PR</span>
-        <p style="margin:10px 0 14px;font-size:0.92rem;line-height:1.9;color:#4a453c;">画数の意味をふまえて、今の悩みを占い師にじっくり聞いてもらいたいときは、電話で相談できるサービスもあります。</p>
-        <div style="text-align:center;line-height:0;"><a href="https://px.a8.net/svt/ejp?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" rel="nofollow">
+      <section class="section-block pr-box">
+        <span class="pr-tag">PR</span>
+        <p class="pr-lead">画数の意味をふまえて、今の悩みを占い師にじっくり聞いてもらいたいときは、電話で相談できるサービスもあります。</p>
+        <div class="pr-banner"><a href="https://px.a8.net/svt/ejp?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" rel="nofollow">
         <img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=260925694841&wid=008&eno=01&mid=s00000012624002005000&mc=1"></a>
         <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" alt=""></div>
       </section>

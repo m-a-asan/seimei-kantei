@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d0a07">
 <title>姓名鑑定処｜無料の姓名判断・名前の画数でわかる五格【登録不要】</title>
 <meta name="description" content="姓名を入力するだけで五格（天格・人格・地格・外格・総格）を無料鑑定。画数の意味・陰陽バランスまで、登録不要・ブラウザ内完結ですぐわかります。">
 <link rel="canonical" href="https://seimei.korekaralab.com/">
@@ -12,7 +13,7 @@
 <meta property="og:description" content="姓名を入力するだけで五格（天格・人格・地格・外格・総格）を無料鑑定。登録不要・ブラウザ内完結。">
 <meta property="og:site_name" content="姓名鑑定処">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="css/style.css?v=20260716">
+<link rel="stylesheet" href="css/style.css?v=20260927">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,13 +51,52 @@
 </head>
 <body>
 <!-- ad-disclosure -->
-<div style="text-align:center;font-size:12px;line-height:1.6;padding:4px 12px;background:rgba(36,33,28,0.05);color:#4a453c;">当サイトはアフィリエイト広告（PR）を利用しています</div>
+<div class="ad-disclosure">当サイトはアフィリエイト広告（PR）を利用しています</div>
   <div class="wrap">
     <header class="site-header">
       <div class="brand-seal">鑑定</div>
       <h1 class="site-title">姓名鑑定処<small>SEIMEI KANTEI-DOKORO</small></h1>
       <p class="site-sub">人生これから研究所が贈る、名前に宿る運勢の物語。漢字二文字・三文字から、あなたの五格を静かに読み解きます。</p>
     </header>
+
+    <!-- CM（音なしで1回だけ再生し、ロゴの場面で止まる。🔇で音ありの再生） -->
+    <div class="cm">
+      <video id="cmVideo" src="media/cm.mp4" poster="media/cm-poster.jpg"
+             autoplay muted playsinline preload="auto"
+             aria-label="姓名鑑定処のCM映像（五格・画数・陰陽で名前を読み解く無料の姓名判断）"></video>
+      <button class="cm-sound" id="cmSound" type="button" aria-label="音を出す">🔇</button>
+    </div>
+    <script>
+      (function () {
+        var v = document.getElementById('cmVideo'), b = document.getElementById('cmSound');
+        var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var started = false;   // 自動再生は1回だけ
+        var LAST = 23;         // 終わったらロゴの場面（23秒）で止める。最後の0.8秒は暗転のため
+        var label = function (s, a) { b.textContent = s; b.setAttribute('aria-label', a); };
+        v.addEventListener('playing', function () { started = true; });
+        v.addEventListener('ended', function () {
+          v.currentTime = LAST; v.muted = true;
+          label('▶', 'もう一度、音ありで再生');
+        });
+        if (still) { v.autoplay = false; v.pause(); label('▶', '音ありで再生'); }
+        else {
+          var kick = function () { if (!started && v.paused) v.play().catch(function () {}); };
+          v.addEventListener('canplay', kick);
+          if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (es) { if (es[0].isIntersecting) kick(); }).observe(v);
+          }
+        }
+        b.addEventListener('click', function () {
+          if (v.paused) {
+            v.muted = false; v.currentTime = 0; v.play().catch(function () {});
+            label('🔊', '音を消す');
+          } else {
+            v.muted = !v.muted;
+            v.muted ? label('🔇', '音を出す') : label('🔊', '音を消す');
+          }
+        });
+      })();
+    </script>
 
     <main>
       <section id="intro">
@@ -155,10 +195,10 @@
       </section>
 
       <!-- a8-coconala -->
-      <section class="section-block">
-        <span style="display:inline-block;font-size:11px;letter-spacing:.08em;padding:2px 8px;border:1px solid rgba(36,33,28,0.3);border-radius:4px;color:#4a453c;">PR</span>
-        <p style="margin:10px 0 14px;font-size:0.92rem;line-height:1.9;color:#4a453c;">名前に込められた意味を知ったあと、恋愛や仕事など今の悩みを誰かに話してみたいときは、電話で占い師に相談できるサービスもあります。</p>
-        <div style="text-align:center;line-height:0;"><a href="https://px.a8.net/svt/ejp?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" rel="nofollow">
+      <section class="section-block pr-box">
+        <span class="pr-tag">PR</span>
+        <p class="pr-lead">名前に込められた意味を知ったあと、恋愛や仕事など今の悩みを誰かに話してみたいときは、電話で占い師に相談できるサービスもあります。</p>
+        <div class="pr-banner"><a href="https://px.a8.net/svt/ejp?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" rel="nofollow">
         <img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=260925694841&wid=008&eno=01&mid=s00000012624002005000&mc=1"></a>
         <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BCJJY+DWPPXM+2PEO+BXQOH" alt=""></div>
       </section>
