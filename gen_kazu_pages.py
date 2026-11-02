@@ -81,13 +81,17 @@ def page_for(n, m, meanings):
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
-{HEAD_COMMON.format(css="../../css/style.css?v=20260927")}
+{HEAD_COMMON.format(css="../../css/style.css?v=20261101")}
 <title>姓名判断で{n}画の意味は「{title}」（{rank}）｜画数の数意解説 - 姓名鑑定処</title>
 <meta name="description" content="姓名判断における{n}画は「{title}」（{rank}）。{text[:60]}——天格・人格・地格・外格・総格それぞれに{n}画が出た場合の読み方を解説します。">
 <link rel="canonical" href="{SITE}/kazu/{n}/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="姓名判断で{n}画の意味は「{title}」（{rank}）">
 <meta property="og:site_name" content="姓名鑑定処">
+<meta property="og:url" content="{SITE}/kazu/{n}/">
+<meta property="og:description" content="姓名判断における{n}画は「{title}」（{rank}）。{text[:60]}">
+<meta property="og:image" content="{SITE}/media/cm-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
 {ld}
 </head>
 <body>
@@ -181,13 +185,17 @@ def hub_page(meanings):
     return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
-{HEAD_COMMON.format(css="../css/style.css?v=20260927")}
+{HEAD_COMMON.format(css="../css/style.css?v=20261101")}
 <title>画数の意味一覧【1〜81画】姓名判断の数意早見表（無料）｜姓名鑑定処</title>
 <meta name="description" content="姓名判断で使う1〜81画すべての数意（画数の意味・吉凶）を一覧で解説。大吉・吉・半吉・要注意・凶の分類つき早見表。気になる画数をタップすると、五格ごとの詳しい読み方がわかります。">
 <link rel="canonical" href="{SITE}/kazu/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="画数の意味一覧【1〜81画】姓名判断の数意早見表">
 <meta property="og:site_name" content="姓名鑑定処">
+<meta property="og:url" content="{SITE}/kazu/">
+<meta property="og:description" content="姓名判断で使う1〜81画すべての数意（画数の意味・吉凶）を一覧で解説。大吉・吉・半吉・要注意・凶の分類つき早見表。">
+<meta property="og:image" content="{SITE}/media/cm-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
 {ld}
 </head>
 <body>
