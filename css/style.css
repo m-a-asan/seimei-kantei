@@ -343,6 +343,13 @@ a { color: var(--gold-hi); }
   background: var(--line);
   margin: 4px 4px;
 }
+/* スマホ幅：3文字＋3文字の名前が姓名の途中で折り返さないよう、マスを少し詰める */
+@media (max-width: 480px) {
+  .stroke-row { gap: 5px; }
+  .stroke-cell { min-width: 40px; padding: 8px 5px 6px; }
+  .stroke-char { font-size: 1.3rem; }
+  .stroke-divider { margin: 4px 2px; }
+}
 
 .grid-wrap {
   display: grid;
